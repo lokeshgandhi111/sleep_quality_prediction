@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sleep Quality Predictor | Cosmic Analysis</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="home.html" class="logo">
+            <span class="logo-icon">✧</span>
+            <span>SleepSphere</span>
+        </a>
+        
+        <!-- <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button> -->
+        
+        <div class="nav-links" id="navLinks">
+            <a href="home.html">Home</a>
+            <a href="about.html">Science</a>
+            <a href="info.html">More info</a>
+        </div>
+    </nav>
+    <div class="container">
+        <h1> Sleep Analysis</h1>
+        <form id="sleepForm">
+            <!-- Personal Details -->
+            <div class="form-group">
+                <label for="name"> Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Communication Channel (Email)</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="age"> Age</label>
+                <input type="number" id="age" name="age" min="10" max="100" required>
+            </div>
+
+            <!-- Lifestyle Factors -->
+            <div class="form-group">
+                <label>Are you a Student?</label>
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <input type="radio" id="student-yes" name="student" value="yes" required>
+                        <label for="student-yes">Yes</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="student-no" name="student" value="no">
+                        <label for="student-no">No</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="screenTime">Daily Screen Time </label>
+                <input type="number" id="screenTime" name="screenTime" min="0" max="24" step="0.5" required>
+            </div>
+
+            <div class="form-group">
+                <label for="sleepTime">Stasis Duration (Sleep Hours)</label>
+                <input type="number" id="sleepTime" name="sleepTime" min="0" max="12" step="0.5" required>
+            </div>
+
+            <div class="form-group">
+                <label for="bedtime">Stasis Initiation Time (Bedtime)</label>
+                <input type="time" id="bedtime" name="bedtime" required>
+            </div>
+
+            <div class="form-group">
+                <label for="wakeTime">Stasis Termination Time (Wake-up)</label>
+                <input type="time" id="wakeTime" name="wakeTime" required>
+            </div>
+
+            <!-- Predict Button -->
+            <button type="button" onclick="predictSleepQuality()">ANALYZE SLEEP PATTERNS</button>
+
+            <!-- Result Display -->
+            <div id="result" class="result">
+                <h3>Sleep Analysis Report: <span id="predictionResult">...</span></h3>
+                <p id="sleepFeedback"></p>
+            </div>
+        </form>
+    </div>
+
+    <script src="form.js">
+    </script>
+</body>
+</html>
